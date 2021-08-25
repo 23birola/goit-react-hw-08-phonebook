@@ -10,9 +10,9 @@ export default function UserMenu() {
   const avatar = defaultAvatar;
 
   return (
-    <div style={css.container}>
-      <img src={avatar} alt="" width="32" style={css.avatar} />
-      <span style={css.name}>Welcome</span>
+    <div className={css.container}>
+      <img src={avatar} alt="" width="32" className={css.avatar} />
+      <span className={css.name}>Welcome</span>
       {/* <button type="button" onClick={() => dispatch(authOperations.logOut())}>
         LogOut
       </button> */}

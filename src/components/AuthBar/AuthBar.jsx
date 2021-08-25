@@ -6,10 +6,10 @@ import css from "./AuthBar.module.css";
 export default function AppBar() {
 //   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
   return (
-    <header style={css.header}>
+    <header className={css.header}>
       <Navigation />
           {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
-      <UserMenu />
+      {/* <UserMenu /> */}
       <AuthNav />
     </header>
   );

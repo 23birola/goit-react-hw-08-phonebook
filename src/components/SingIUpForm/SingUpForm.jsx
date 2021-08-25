@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../redux/auth';
+// import { authOperations } from '../redux/auth';
 import css from './SingUpForm.module.css';
 
 export default function SignUpForm() {
@@ -22,25 +22,25 @@ export default function SignUpForm() {
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(authOperations.register({ name, email, password }));
-    setName('');
-    setEmail('');
-    setPassword('');
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   dispatch(authOperations.register({ name, email, password }));
+  //   setName('');
+  //   setEmail('');
+  //   setPassword('');
+  // };
 
   return (
     <div>
       <h1>SIGN UP</h1>
 
-      <form onSubmit={handleSubmit} style={css.form} autoComplete="off">
-        <label style={css.label}>
+      <form className={css.form} autoComplete="off">
+        <label className={css.label}>
           Имя
           <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
 
-        <label style={css.label}>
+        <label className={css.label}>
           Почта
           <input
             type="email"
@@ -50,7 +50,7 @@ export default function SignUpForm() {
           />
         </label>
 
-        <label style={css.label}>
+        <label className={css.label}>
           Пароль
           <input
             type="password"

@@ -1,18 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { authOperations } from '../redux/auth';
+// import { authOperations } from '../redux/auth';
 import css from './LoginForm.module.css';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -30,19 +19,19 @@ export default function LoginView() {
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
-    setEmail('');
-    setPassword('');
-  };
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   dispatch(authOperations.logIn({ email, password }));
+  //   setEmail('');
+  //   setPassword('');
+  // };
 
   return (
     <div>
       <h1>LOG IN</h1>
 
-      <form onSubmit={handleSubmit} style={css.form} autoComplete="off">
-        <label style={css.label}>
+      <form onSubmit className={css.form} autoComplete="off">
+        <label className={css.label}>
           Почта
           <input
             type="email"
@@ -52,7 +41,7 @@ export default function LoginView() {
           />
         </label>
 
-        <label style={css.label}>
+        <label className={css.label}>
           Пароль
           <input
             type="password"

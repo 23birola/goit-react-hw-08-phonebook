@@ -6,6 +6,10 @@
   color: '#2A363B';
 }
 
+.link:not(:last-child) {
+  margin-right: 20px;
+}
+
 .activeLink {
   color: '#E84A5F';
 }

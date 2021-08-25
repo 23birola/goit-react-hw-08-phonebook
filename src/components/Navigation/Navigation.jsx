@@ -3,15 +3,18 @@ import css from './Navigation.module.css'
 
 const Navigation = () => (
   <nav>
-    <NavLink to="/" exact style={css.link} activeStyle={css.activeLink}>
+    <NavLink to="/" exact
+      className={css.link}
+      activeClassName={css.activeLink}
+    >
       Home
     </NavLink>
 
     <NavLink
       to="/contacts"
       exact
-      style={css.link}
-      activeStyle={css.activeLink}
+      className={css.link}
+      activeClassName={css.activeLink}
     >
       Contactcs
     </NavLink>

@@ -7,16 +7,16 @@ export default function AuthNav() {
       <NavLink
         to="/register"
         exact
-        style={css.link}
-        activeStyle={css.activeLink}
+        className={css.link}
+        activeClassName={css.activeLink}
       >
         Sign up
       </NavLink>
       <NavLink
         to="/login"
         exact
-        style={css.link}
-        activeStyle={css.activeLink}
+        className={css.link}
+        activeClassName={css.activeLink}
       >
         Log in
       </NavLink>
