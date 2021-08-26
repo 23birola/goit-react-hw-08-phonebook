@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { authOperations } from '../redux/auth';
+import authOperations from '../../redux/auth/auth-operations';
 import css from './SingUpForm.module.css';
 
 export default function SignUpForm() {
@@ -22,19 +22,19 @@ export default function SignUpForm() {
     }
   };
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch(authOperations.register({ name, email, password }));
-  //   setName('');
-  //   setEmail('');
-  //   setPassword('');
-  // };
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(authOperations.register({ name, email, password }));
+    setName('');
+    setEmail('');
+    setPassword('');
+  };
 
   return (
     <div>
       <h1>SIGN UP</h1>
 
-      <form className={css.form} autoComplete="off">
+      <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
         <label className={css.label}>
           Имя
           <input type="text" name="name" value={name} onChange={handleChange} />
