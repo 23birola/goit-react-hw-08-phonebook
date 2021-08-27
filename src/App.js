@@ -19,9 +19,9 @@ export default function App() {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(authOperations.fetchCurrentUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(authOperations.fetchCurrentUser());
+  // }, [dispatch]);
 
   return (
     <div className={css.container}>

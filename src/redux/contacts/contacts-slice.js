@@ -8,7 +8,13 @@ import {
 const ItemsSlice = createSlice({
   name: 'contacts',
   initialState: {
-    items: [],
+    items: [
+      {
+        name: 'yfkyfkyfk',
+        number: '2695945949',
+        id: '15',
+      },
+    ],
     filter: '',
     status: null,
     error: null,

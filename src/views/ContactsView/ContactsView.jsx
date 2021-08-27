@@ -9,6 +9,7 @@ import { getFilter, getContacts, getSelectedContacts } from '../../redux/contact
 const ContactsView = () => {
     const filter = useSelector(getFilter);
     const contacts = useSelector(getContacts);
+    console.log('contacts', contacts);
     const selectedContacts = useSelector(getSelectedContacts);
     return (
         <>
