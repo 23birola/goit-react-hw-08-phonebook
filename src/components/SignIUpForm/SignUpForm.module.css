@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
 }
-.singUpBtn {
+.signUpBtn {
   margin-top: 20px;
   display: flex;
   justify-content: center;

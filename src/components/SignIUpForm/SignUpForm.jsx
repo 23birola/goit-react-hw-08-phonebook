@@ -67,7 +67,7 @@ export default function SignUpForm() {
             onChange={handleChange}
           />
         </label>
-         <div className={css.singUpBtn}>
+         <div className={css.signUpBtn}>
           <Button className={css.button} variant="contained" color="primary" type="submit">Sign Up</Button>
         </div>
       </form>
