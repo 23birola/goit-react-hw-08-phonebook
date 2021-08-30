@@ -2,3 +2,9 @@
 .number {
   margin-right: 10px;
 }
+
+.contactItem {
+  display: grid;
+  grid-template-columns: 150px 150px 20px;
+  align-items: center;
+}

@@ -1,9 +1,14 @@
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
 .link {
   display: 'inline-block';
   text-decoration: 'none';
   padding: 12;
   font-weight: 700;
-  color: '#2A363B';
+  color: white;
 }
 
 .link:not(:last-child) {

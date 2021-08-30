@@ -1,8 +1,17 @@
 .form {
+  max-width: 430px;
+  padding: 15px;
   width: 320;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 .label {
-  display: 'flex';
-  flex-direction: 'column';
-  margin-bottom: 15;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.singUpBtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }

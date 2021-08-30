@@ -1,8 +1,18 @@
 .form {
+  max-width: 430px;
+  padding: 15px;
   width: 320;
+  border: 1px solid gray;
+  border-radius: 3px;
 }
 .label {
-  display: 'flex';
-  margin-bottom: 15px;
-  flex-direction: 'column';
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logInBtn {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }

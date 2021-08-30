@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import AuthBar from './components/AuthBar/AuthBar';
 import css from './App.module.css';
 import { lazy, Suspense, useEffect } from 'react';
-import { fetchContacts } from './redux/contacts/contacts-operations';
+// import { fetchContacts } from './redux/contacts/contacts-operations';
 import authOperations from './redux/auth/auth-operations';
 
 import PublicRoute from './components/PublicRoute';
@@ -29,10 +29,6 @@ export default function App() {
 
   useEffect(() => {
     dispatch(authOperations.fetchCurrentUser());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (

@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import css from './ContactListItem.module.css';
 import { deleteContact } from '../../redux/contacts/contacts-operations';
 import { useDispatch } from 'react-redux';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const ContactListItem = ({ contact}) => {
   
@@ -14,7 +16,7 @@ return (
     <li className={css.contactItem}>
         <span className={css.name}>{contact.name}</span>
         <span className={css.number}>{contact.number}</span>
-        <button type="button" onClick={() => deleteItem(contact.id)}>Delete</button>
+        <IconButton aria-label="delete" type="button" onClick={() => deleteItem(contact.id)}><DeleteIcon /></IconButton>
     </li>);
 }
     

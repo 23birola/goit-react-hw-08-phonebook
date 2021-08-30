@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
 import toast from 'react-hot-toast';
 import { addContact } from '../../redux/contacts/contacts-operations';
+import { Button, TextField } from '@material-ui/core';
 
 const ContactForm = () => {
   const contacts = useSelector(getContacts);
@@ -26,8 +27,10 @@ const ContactForm = () => {
   };
 
   return <form onSubmit={onSubmit} className={css.contactForm}>
-    <label htmlFor="name">Name</label>
-    <input
+    <label htmlFor="name"></label>
+    <TextField
+      label="Name"
+      variant="outlined"
       type="text"
       name="name"
       id="name"
@@ -36,8 +39,10 @@ const ContactForm = () => {
       title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
        required
       />
-    <label htmlFor="number">Number</label>
-    <input
+    <label htmlFor="number"></label>
+    <TextField
+      label="Phone number"
+      variant="outlined"
      type="tel"
      name="number"
      id="number"
@@ -46,7 +51,10 @@ const ContactForm = () => {
      title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
      required
     />
-    <button type="submit">Add contact</button>
+
+     <div className={css.addContactBtn}>
+      <Button variant="contained" color="primary" type="submit">Add contact</Button>
+     </div>
     </form>
 }
 

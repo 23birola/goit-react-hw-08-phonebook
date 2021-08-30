@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
 import css from './LoginForm.module.css';
+import { Button, TextField } from '@material-ui/core';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -32,26 +33,29 @@ export default function LoginView() {
 
       <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
         <label className={css.label}>
-          Почта
-          <input
+          <TextField
+            id="standard-basic"
             type="email"
             name="email"
             value={email}
+            label='email'
             onChange={handleChange}
           />
         </label>
 
         <label className={css.label}>
-          Пароль
-          <input
+          <TextField
+            id="standard-basic"
             type="password"
             name="password"
             value={password}
+            label='password'
             onChange={handleChange}
           />
         </label>
-
-        <button type="submit">Enter</button>
+        <div className={css.logInBtn}>
+          <Button variant="contained" color="primary" type="submit">Enter</Button>
+        </div>
       </form>
     </div>
   );

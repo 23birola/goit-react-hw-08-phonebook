@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
 import css from './SingUpForm.module.css';
+import { Button, TextField } from '@material-ui/core';
 
 export default function SignUpForm() {
   const dispatch = useDispatch();
@@ -36,31 +37,39 @@ export default function SignUpForm() {
 
       <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
         <label className={css.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
+          <TextField
+            id="standard-basic"
+            type="text"
+            name="name"
+            value={name}
+            label="name"
+            onChange={handleChange} />
         </label>
 
         <label className={css.label}>
-          Почта
-          <input
+          <TextField
+            id="standard-basic"
             type="email"
             name="email"
+            label='email'
             value={email}
             onChange={handleChange}
           />
         </label>
 
         <label className={css.label}>
-          Пароль
-          <input
+          <TextField
+            id="standard-basic"
             type="password"
             name="password"
+            label='password'
             value={password}
             onChange={handleChange}
           />
         </label>
-
-        <button type="submit">Sign Up</button>
+         <div className={css.singUpBtn}>
+          <Button className={css.button} variant="contained" color="primary" type="submit">Sign Up</Button>
+        </div>
       </form>
     </div>
   );
