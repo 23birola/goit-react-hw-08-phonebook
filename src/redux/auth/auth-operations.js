@@ -13,32 +13,34 @@ const token = {
   },
 };
 
-const register = createAsyncThunk('auth/register', async credentials => {
+const register = createAsyncThunk('auth/register', async (credentials, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
     return data;
   } catch (error) {
     toast('Something went wrong');
-  }
+    return rejectWithValue(error.message);  }
 });
 
-const logIn = createAsyncThunk('auth/login', async credentials => {
+const logIn = createAsyncThunk('auth/login', async (credentials, { rejectWithValue }) => {
   try {
     const { data } = await axios.post('/users/login', credentials);
     token.set(data.token);
     return data;
   } catch (error) {
     toast('Something went wrong');
+    return rejectWithValue(error.message); 
   }
 });
 
-const logOut = createAsyncThunk('auth/logout', async () => {
+const logOut = createAsyncThunk('auth/logout', async (_, { rejectWithValue }) => {
   try {
     await axios.post('/users/logout');
     token.unset();
   } catch (error) {
     toast('Something went wrong');
+    return rejectWithValue(error.message); 
   }
 });
 /*
@@ -50,29 +52,31 @@ const logOut = createAsyncThunk('auth/logout', async () => {
  * 2. Если токена нет, выходим не выполняя никаких операций
  * 3. Если токен есть, добавляет его в HTTP-заголовок и выполянем операцию
  */
-// const fetchCurrentUser = createAsyncThunk(
-//   'auth/refresh',
-//   async (_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
+const fetchCurrentUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
 
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue();
-//     }
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
 
-//     token.set(persistedToken);
-//     try {
-//       const { data } = await axios.get('/users/current');
-//       return data;
-//     } catch (error) {
-//       toast('Something went wrong');
-//     }
-//   },
-// );
+    token.set(persistedToken);
+    try {
+      const { data } = await axios.get('/users/current');
+      return data;
+    } catch (error) {
+      toast('Something went wrong');
+      return thunkAPI.rejectWithValue(error.message); 
+    }
+  },
+);
 
 const authOperations = {
   register,
   logOut,
   logIn,
+  fetchCurrentUser,
 };
 export default authOperations;

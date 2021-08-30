@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/contacts/contacts-selectors';
@@ -51,7 +50,4 @@ const ContactForm = () => {
     </form>
 }
 
-ContactForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired
-};
 export default ContactForm;

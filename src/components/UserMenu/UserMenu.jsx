@@ -7,13 +7,13 @@ import css from './UserMenu.module.css'
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-  const name = useSelector(authSelectors.getUsername);
+  const email = useSelector(authSelectors.getUseremail);
   const avatar = defaultAvatar;
 
   return (
     <div className={css.container}>
       <img src={avatar} alt="" width="32" className={css.avatar} />
-      <span className={css.name}>Welcome {name}</span>
+      <span className={css.name}>{email}</span>
       <button type="button" onClick={() => dispatch(authOperations.logOut())}>
         LogOut
       </button>

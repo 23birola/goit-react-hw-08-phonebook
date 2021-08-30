@@ -16,12 +16,12 @@ export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   dispatch(authOperations.fetchCurrentUser());
-  // }, [dispatch]);
+  useEffect(() => {
+  dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <div className={css.container}>
