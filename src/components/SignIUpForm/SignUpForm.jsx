@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
-import css from './SingUpForm.module.css';
+import css from './SignUpForm.module.css';
 import { Button, TextField } from '@material-ui/core';
 
 export default function SignUpForm() {
