@@ -4,11 +4,12 @@ import { useDispatch } from 'react-redux';
 import AuthBar from './components/AuthBar/AuthBar';
 import css from './App.module.css';
 import { lazy, Suspense, useEffect } from 'react';
-// import { fetchContacts } from './redux/contacts/contacts-operations';
 import authOperations from './redux/auth/auth-operations';
-
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
+import LoaderSpinner from './components/Loader/Loader';
+
+
 const HomeView = lazy(() =>
   import('./views/HomeView/HomeView' /* webpackChunkName: "HomePage" */),
 );
@@ -36,7 +37,7 @@ export default function App() {
       <AuthBar />
 
       <Switch>
-        <Suspense fallback={<p>Загружаем...</p>}>
+        <Suspense fallback={<LoaderSpinner/> }>
           <PublicRoute exact path="/">
             <HomeView />
           </PublicRoute>

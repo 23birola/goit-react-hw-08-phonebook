@@ -34,7 +34,6 @@ export default function LoginView() {
       <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
         <label className={css.label}>
           <TextField
-            id="standard-basic"
             type="email"
             name="email"
             value={email}
@@ -45,7 +44,6 @@ export default function LoginView() {
 
         <label className={css.label}>
           <TextField
-            id="standard-basic"
             type="password"
             name="password"
             value={password}

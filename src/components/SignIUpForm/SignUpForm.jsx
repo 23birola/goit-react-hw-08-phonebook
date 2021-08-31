@@ -38,7 +38,6 @@ export default function SignUpForm() {
       <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
         <label className={css.label}>
           <TextField
-            id="standard-basic"
             type="text"
             name="name"
             value={name}
@@ -48,7 +47,6 @@ export default function SignUpForm() {
 
         <label className={css.label}>
           <TextField
-            id="standard-basic"
             type="email"
             name="email"
             label='email'
@@ -59,7 +57,6 @@ export default function SignUpForm() {
 
         <label className={css.label}>
           <TextField
-            id="standard-basic"
             type="password"
             name="password"
             label='password'
